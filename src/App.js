@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import StartScreen from './components/StartScreen';
-import QuestionsContainer from './containers/QuestionsContainer';
+import TriviaContainer from './containers/TriviaContainer';
 
 function App() {
-
     const [game, setGame] = useState(false);
 
-    let handleStart = () => {
-        setGame(true)
-    }
+    const handleStart = () => {
+        setGame(true);
+    };
 
-    return game ? <QuestionsContainer /> : <StartScreen handleStart={handleStart} />;
+    return game ? (
+        <TriviaContainer />
+    ) : (
+        <StartScreen handleStart={handleStart} />
+    );
 }
 
 export default App;

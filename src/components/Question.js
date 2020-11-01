@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const Question = ({ question }) => {
-    return (
+function Question({ question, answer, choices }) {
+    return choices ? (
         <div>
             <p>{question}</p>
+            {choices.map((choice) => (
+                <p>{choice}</p>
+            ))}
         </div>
+    ) : (
+        <p>Loading...</p>
     );
-};
+}
 
 export default Question;
